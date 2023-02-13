@@ -85,7 +85,7 @@ export async function recaptcha(client, memberAdd) {
     const collector = channel.createMessageCollector({
       filter,
       max: 1,
-      time: 1000 * 60 * 2,
+      time: 1000 * 60 * 5,
     });
     let answered = false;
     collector.on('collect', async (m) => {
