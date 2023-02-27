@@ -46,9 +46,6 @@ build/Release
 node_modules/
 jspm_packages/
 
-# Dependecy Archives
-package-lock.json
-
 # TypeScript v1 declaration files
 typings/
 
