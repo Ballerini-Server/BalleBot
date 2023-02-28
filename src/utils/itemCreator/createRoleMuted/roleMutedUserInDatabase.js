@@ -46,8 +46,9 @@ export async function muteUserInDatabase(client, event, reason, userMutated) {
     dateMuted: new Date(dateForDatabase),
     guildId: event.guild.id,
     roleId: muterole.id,
-    reason: `Punido por ${event.author.tag || client.user.tag} | ${event.author.id || client.user.id
-      }\n— Motivo: ${reasonMuted}`,
+    reason: `Punido por ${event.author.tag || client.user.tag} | ${
+      event.author.id || client.user.id
+    }\n— Motivo: ${reasonMuted}`,
   };
 
   const guildUndefinedMutated = new client.Database.table(

@@ -60,7 +60,7 @@ export default {
         .members.cache.get(user.id);
       if (
         memberUser?.roles.highest.position >=
-        message.member.roles.highest.position &&
+          message.member.roles.highest.position &&
         !(message.member.id === message.guild.ownerId)
       ) {
         return message.channel.send({
@@ -191,8 +191,9 @@ export default {
                       }),
                     },
                     title: `Aviso ${warnRemove + 1} foi removido do usuário`,
-                    description: `O usuário ${user.tag
-                      } teve um aviso removido! \n
+                    description: `O usuário ${
+                      user.tag
+                    } teve um aviso removido! \n
 **Punido por**: <@${autorDeleted}>
 **Data:** ${parseDateForDiscord(dataDeleted)}
 **Motivo** ${avisoDeleted}`,

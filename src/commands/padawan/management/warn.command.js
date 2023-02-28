@@ -126,7 +126,7 @@ ${reason}
           }
           if (
             memberUser.roles.highest.position >=
-            message.member.roles.highest.position &&
+              message.member.roles.highest.position &&
             !(message.member.id === message.guild.ownerId)
           ) {
             return message.channel

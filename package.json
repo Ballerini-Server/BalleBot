@@ -12,7 +12,9 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "commit": "git add . && cz && git push",
-    "commit:partial": "cz"
+    "commit:partial": "cz",
+    "lint": "eslint '**/*.js' --ignore-pattern node_modules/",
+    "format": "npm run lint -- --fix"
   },
   "husky": {
     "hooks": {

@@ -91,15 +91,15 @@ export default {
         const authorValidation = /(Punido por )(.*)\n/;
         const authorOfMute = authorValidation.test(userMuted.reason)
           ? userMuted.reason
-            .match(authorValidation)[0]
-            .replace(/(Punido por )|(\n)/g, '')
-            .replace(/(\d{18})/, `<@$1>`)
+              .match(authorValidation)[0]
+              .replace(/(Punido por )|(\n)/g, '')
+              .replace(/(\d{18})/, `<@$1>`)
           : `<sem autor>`;
 
         const descriptionMute = userMuted.reason
           ? userMuted.reason
-            .replace(authorValidation, '')
-            .replace('— Motivo: ', '')
+              .replace(authorValidation, '')
+              .replace('— Motivo: ', '')
           : '<Descrição ou motivo não especificado>';
 
         const inviteMessage = `**Data final do mute: ${dataForMessage}**\n**Punido por: ${authorOfMute}**\n**Motivo: **${descriptionMute} \n`;
