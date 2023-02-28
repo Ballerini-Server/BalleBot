@@ -6,15 +6,10 @@
   "repository": "https://github.com/Ballerini-Server/BalleBot.git",
   "author": "Tauz tauasantops@gmail.com",
   "license": "MIT",
-  "engines": {
-    "node": "16.17.0"
-  },
   "scripts": {
     "dev": "nodemon src/index.js",
     "commit": "git add . && cz && git push",
-    "commit:partial": "cz",
-    "lint": "eslint '**/*.js' --ignore-pattern node_modules/",
-    "format": "npm run lint -- --fix"
+    "commit:partial": "cz"
   },
   "husky": {
     "hooks": {
