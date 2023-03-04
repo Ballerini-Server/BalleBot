@@ -1,6 +1,6 @@
 {
   "name": "ballebot",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "main": "src/index.js",
   "type": "module",
   "repository": "https://github.com/Ballerini-Server/BalleBot.git",
