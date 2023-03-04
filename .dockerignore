@@ -1,0 +1,7 @@
+docs
+.husky
+.git
+json.sqlite
+.tool-versions
+.gitignore
+node_modules

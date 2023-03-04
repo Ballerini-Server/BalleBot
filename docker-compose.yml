@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  agentoo_api:
+    container_name: ballebot
+    build:
+      context: .
+      target: development
+    env_file:
+      - '.env'
+    command: npm run dev
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
