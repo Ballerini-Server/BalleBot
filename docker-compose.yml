@@ -1,7 +1,7 @@
 version: '3.1'
 
 services:
-  agentoo_api:
+  discord_bot:
     container_name: ballebot
     build:
       context: .
