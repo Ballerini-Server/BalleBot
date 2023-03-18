@@ -9,7 +9,7 @@ export default {
   run: (client, message) => {
     if (message.author.bot) return;
     if (message.content === '') return;
-    let { prefix } = process.env;
+    let { PREFIX } = process.env;
 
     if (message.channel.type !== 'DM') {
       const guildIdDatabase = new client.Database.table(
@@ -38,7 +38,7 @@ export default {
       }
 
       if (guildIdDatabase.has(`prefix`)) {
-        prefix = guildIdDatabase.get(`prefix`);
+        PREFIX = guildIdDatabase.get(`prefix`);
       }
     }
     if (
@@ -52,7 +52,7 @@ export default {
         embeds: [
           {
             color: Colors.pink_red,
-            title: `Meu prefixo no servidor é **\`${prefix}\`**`,
+            title: `Meu prefixo no servidor é **\`${PREFIX}\`**`,
             footer: {
               text: `${message.author.tag}`,
               icon_url: `${message.author.displayAvatarURL({ dynamic: true })}`,
@@ -63,7 +63,7 @@ export default {
       });
     }
 
-    if (!message.content.startsWith(prefix)) {
+    if (!message.content.startsWith(PREFIX)) {
       if (message.channel.type === 'DM') {
         return message.channel.send(
           "Envie tudo começando com o caracter  '=' exemplo: =ping"
@@ -73,7 +73,7 @@ export default {
     }
     if (/= /.test(message.content)) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = message.content.slice(PREFIX.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
     try {
       const commandToBeExecuted = client.Commands.get(commandName);
@@ -82,7 +82,7 @@ export default {
 
         if (message.channel.type === 'DM') {
           if (dmTrueOrFalse) {
-            return commandToBeExecuted.run({ client, message, args, prefix });
+            return commandToBeExecuted.run({ client, message, args, PREFIX });
           }
           return;
         }
@@ -114,14 +114,14 @@ export default {
 Para começar vamos definir os cargos administrativos:
 Eu ofereço 4 cargos de hierarquia, Everyone, Padawan, Moderadores e Staff.
 O único que poderá definir os cargos será o dono do servidor ou um administrador real!
-Então mande a seguinte mensagem para definir os cargos repectivamente e saiba sobre os comandos com ${prefix}help!
-${prefix}setAdm @cargoPadawan @cargoModeradores @cargoStaff `,
+Então mande a seguinte mensagem para definir os cargos repectivamente e saiba sobre os comandos com ${PREFIX}help!
+${PREFIX}setAdm @cargoPadawan @cargoModeradores @cargoStaff `,
               },
             ],
           });
         }
         if (permissionIsTrueOrFalse) {
-          commandToBeExecuted.run({ client, message, args, prefix });
+          commandToBeExecuted.run({ client, message, args, PREFIX });
         } else {
           message.channel
             .send({
