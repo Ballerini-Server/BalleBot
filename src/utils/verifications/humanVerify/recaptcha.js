@@ -60,7 +60,7 @@ export async function recaptcha(client, memberAdd) {
 
     fundo.getBuffer(jimp.MIME_PNG, async (err, buffer) => {
       await channel.send({
-        content: `${memberAdd.user} **Caso não esteja vendo a código para entrar no servidor, siga estas intruções para habilitar e ver o código:**
+        content: `${memberAdd.user} **Caso não esteja vendo o código para entrar no servidor, siga essas instruções para habilitar e ver:**
 > **Abra Configurações do usuário**
 > **Texto e Imagens**
 > **Ative a primeira opção**: \`Quando publicados como links no chat\``,
