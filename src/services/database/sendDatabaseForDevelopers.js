@@ -2,7 +2,7 @@ import moment from 'moment';
 
 export function sendDatabaseForDevelopers(client) {
   const now = moment();
-  const targetTime = moment().set({ hour: 15, minute: 43, second: 0 });
+  const targetTime = moment().set({ hour: 23, minute: 0, second: 0 });
 
   const developers = process.env.DEVELOPERS?.split(',');
   console.log(developers);
